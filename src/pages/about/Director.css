@@ -22,7 +22,8 @@
   
   .image-container img {
     width: 450px; /* Ensure the image is responsive */
-    height: auto;
+    height: 450px;
+    object-fit:contain;
     border-radius: 10px;
   }
   
@@ -95,7 +96,7 @@
       }
     
       .image-container {
-        width: 100%;
+        width: 90%;
       }
     
       .text-container {
@@ -124,7 +125,7 @@
     }
   
     .image-container {
-      width: 100%;
+      width: 90%;
     }
   
     .text-container {

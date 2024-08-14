@@ -5,7 +5,7 @@
     justify-content: space-around;
     align-items: center; 
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
     padding: 20px; 
     box-sizing: border-box; 
   }
@@ -46,5 +46,50 @@
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   
+  }
+
+  iframe{
+    margin-bottom: 20px;
+    width:600px;
+    height: 450px; 
+  }
+  
+  @media (max-width: 1200px) {
+    .Appcont{
+      padding-top: 100px;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .map{
+      padding-bottom: 20px;
+    }
+    .contact-info {
+        width: 90%; /* Adjust width for smaller screens */
+        padding: 10px; /* Adjust padding */
+    }
+  
+    h1 {
+        font-size: 1.2rem; /* Smaller font size for smaller screens */
+        margin-bottom: 10px; /* Adjust margin */
+    }
+  
+    .contact-item {
+        margin-bottom: 8px; /* Adjust margin */
+    }
+  
+    .contact-item svg {
+        font-size: 1.2rem; /* Smaller icon size */
+        margin-right: 6px; /* Adjust margin */
+    }
+
+    .map{
+      width: 90%;
+    }
+    
+    iframe{
+      margin-bottom: 20px;
+      width:100%;
+      height: 450px; 
+    }
   }
   
