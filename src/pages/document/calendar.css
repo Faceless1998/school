@@ -1,0 +1,113 @@
+.calendar-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit; /* Inherit background from parent */
+  filter: blur(10px); /* Adjust blur value as needed */
+  -webkit-filter: blur(10px); /* For Safari */
+  z-index: -1; /* Ensure it stays behind the content */
+}
+
+.calendar {
+  position: relative;
+  z-index: 1; /* Ensure it is above the blurred background */
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 100px;
+}
+
+.month {
+  border: 1px solid #ddd;
+  margin: 5px;
+  padding: 10px;
+  width: calc(100% / 3 - 20px); /* Adjust to fit 3 columns */
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.days {
+  display: flex;
+  flex-direction: column;
+}
+
+.week {
+  display: flex;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd; /* Bottom border for header row */
+}
+
+.day-header {
+  width: 14.28%; /* 100% / 7 days */
+  text-align: center;
+  padding: 5px;
+  border-right: 1px solid #ddd; /* Right border for day headers */
+  background-color: #f0f0f0;
+}
+
+.day-header:last-child {
+  border-right: none; /* Remove the right border from the last header */
+}
+
+.days-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  width: 14.28%; /* 100% / 7 days */
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  border-top: 1px solid #ddd; /* Top border for each day */
+  border-right: 1px solid #ddd; /* Right border for each day */
+}
+
+.day:last-child {
+  border-right: none; /* Remove the right border from the last day in each row */
+}
+
+.days-grid .day:nth-child(7n) {
+  border-right: none; /* Remove the right border from the last day in each row */
+}
+
+.empty {
+  background-color: #ffffff;
+}
+
+.active {
+  background-color: #fff;
+}
+
+/* Highlighted Dates */
+.day.highlight {
+  background-color: rgb(255, 0, 0);
+  color: white; /* Or any other color for highlighted dates */
+}
+
+.day.weekend {
+  color: rgb(255, 255, 255); /* Text color for weekend dates */
+  background-color: rgb(255, 0, 0);
+
+  font-weight: bold; /* Optional: make weekend dates bold */
+}
+
+@media (max-width: 1065px) {
+  .month {
+    width: calc(50% - 20px); /* Full width for smaller screens */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .month {
+    width: calc(100% - 20px); /* Full width for smaller screens */
+  }
+}

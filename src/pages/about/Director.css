@@ -1,0 +1,149 @@
+.finance-courses {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-image:url(./../../assets/back.jpg);
+    background-size: cover;
+    color: #ffffff;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  .image-container {
+    width: 400px;
+    height: 500px;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.668);
+    backdrop-filter: 5px;
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+  }
+  
+  .image-container img {
+    width: 450px; /* Ensure the image is responsive */
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .text-container {
+    width: 600px;
+    flex: 1;
+    padding: 20px;
+    background-color: #b35729b8;
+    backdrop-filter: 5px;
+  
+  }
+  
+  .text-container h1,
+  .text-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .text-container p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .text-container button {
+    background-color: #b35729;
+    color: #f7f7f7;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  .text-container button:hover {
+    background-color: #000000be;
+  }
+  
+  /* Media Queries */
+  /* @media (max-width: 1024px) {
+    .finance-courses {
+      flex-direction: column;
+    }
+  
+    .image-container {
+      width: 100%;
+    }
+  
+    .text-container {
+      max-width: 100%;
+      text-align: center;
+    }
+  
+    .text-container h1,
+    .text-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .text-container p {
+      font-size: 0.875rem;
+    }
+  
+    .text-container button {
+      font-size: 0.875rem;
+    }
+  } */
+  
+  @media (min-width: 480px) and (max-width: 1024px) {
+    .finance-courses {
+        padding: 5px; 
+      }
+    
+      .image-container {
+        width: 100%;
+      }
+    
+      .text-container {
+        max-width: 100%;
+        text-align: center;
+      }
+    
+      .text-container h1,
+      .text-container h2 {
+        font-size: 1rem;
+      }
+    
+      .text-container p {
+        font-size: 0.625rem;
+      }
+    
+      .text-container button {
+        font-size: 0.625rem;
+        padding: 6px 12px;
+      }
+  }
+  
+  @media (max-width: 480px) {
+    .finance-courses {
+      padding: 5px; 
+    }
+  
+    .image-container {
+      width: 100%;
+    }
+  
+    .text-container {
+      max-width: 100%;
+      text-align: center;
+    }
+  
+    .text-container h1,
+    .text-container h2 {
+      font-size: 1rem;
+    }
+  
+    .text-container p {
+      font-size: 0.625rem;
+    }
+  
+    .text-container button {
+      font-size: 0.625rem;
+      padding: 6px 12px;
+    }
+  }
+  

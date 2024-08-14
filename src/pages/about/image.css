@@ -1,0 +1,12 @@
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust spacing as needed */
+  padding-bottom: 20px;
+}
+
+.responsiveImage {
+  width: 90%;
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure the image does not exceed container width */
+}

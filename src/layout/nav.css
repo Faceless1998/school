@@ -1,0 +1,215 @@
+nav {
+  float: right;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a {
+  display: block;
+  padding: 0 20px;
+  line-height: 70px;
+  background: #ffffff;
+  color: #463f3f;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  background: #f2f2f2;
+  color: #fb5958;
+}
+nav ul li a:not(:only-child):after {
+  padding-left: 4px;
+  content: ' ▾';
+}
+nav ul li ul li {
+  min-width: 190px;
+}
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  display: none;
+  background: #ffffff; /* Ensure the background is white for dropdown */
+  padding: 0; /* Remove any extra padding */
+}
+
+.nav-dropdown.open {
+  display: block;
+}
+
+.nav-dropdown .nested-dropdown {
+  left: 100%; /* Position to the right of the parent dropdown */
+  top: 0;
+  display: none; /* Hidden by default */
+  padding: 0; /* Remove any extra padding */
+}
+
+.nav-dropdown .nested-dropdown.open {
+  display: block;
+}
+
+.nav-dropdown li {
+  position: relative; /* Needed for nested dropdown positioning */
+}
+
+.nav-dropdown .nested-dropdown li a {
+  padding: 15px 20px; /* Adjust padding for nested items */
+}
+
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  background: #fff;
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 800px) {
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul.open {
+    display: block;
+  }
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+}
+
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #463f3f;
+  position: absolute;
+  display: block;
+  content: '';
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before,
+#nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 800px) {
+  .nav-list {
+    display: block !important;
+  }
+}
+
+.navigation {
+  height: 70px;
+  background: #ffffff;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+
+.brand a,
+.brand a:visited {
+  color: #463f3f;
+  text-decoration: none;
+}
+
+/* Logo Design */
+.brand img {
+  height: 60px; /* Adjust the height as needed */
+  width: auto; /* Maintain aspect ratio */
+  display: block; /* Ensures image is treated as block element */
+}
+
+/* Hover effect to show nested dropdown */
+/* .nav-dropdown li a:hover + .nested-dropdown,
+.nav-dropdown .nested-dropdown:hover {
+  display: block;
+} */
+
+/* Style adjustments for nested dropdown items */
+.nav-dropdown .nested-dropdown li {
+  position: relative;
+}
+
+.nav-dropdown .nested-dropdown li a {
+  background: #f9f9f9; /* Lighter background for nested dropdown */
+  color: #463f3f;
+  padding: 10px 20px;
+}
+
+.nav-dropdown .nested-dropdown li a:hover {
+  background: #f2f2f2;
+  color: #fb5958;
+}
+
+.nested-dropdown {
+  display: none;
+}
+
+.nested-dropdown.open {
+  display: block;
+}
