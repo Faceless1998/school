@@ -79,30 +79,23 @@ const Pagination = ({
     }
   };
 
-  // Function to handle 'First' button click
-  const handleFirstClick = () => {
-    if (currentPage > 1) {
-      onPageChange(1);
-    }
-  };
+  // // Function to handle 'First' button click
+  // const handleFirstClick = () => {
+  //   if (currentPage > 1) {
+  //     onPageChange(1);
+  //   }
+  // };
 
-  // Function to handle 'Last' button click
-  const handleLastClick = () => {
-    if (currentPage < totalPages) {
-      onPageChange(totalPages);
-    }
-  };
+  // // Function to handle 'Last' button click
+  // const handleLastClick = () => {
+  //   if (currentPage < totalPages) {
+  //     onPageChange(totalPages);
+  //   }
+  // };
 
   return (
     <div className="pagination-container">
       <ul className="pagination">
-        <li
-          aria-label="First page"
-          className={`pagination-item ${currentPage === 1 ? "disabled" : ""}`}
-          onClick={handleFirstClick}
-        >
-          &lt;&lt;
-        </li>
         <li
           aria-label="Previous page"
           className={`pagination-item ${currentPage === 1 ? "disabled" : ""}`}
@@ -120,13 +113,7 @@ const Pagination = ({
         >
           &gt;
         </li>
-        <li
-          aria-label="Last page"
-          className={`pagination-item ${currentPage === totalPages ? "disabled" : ""}`}
-          onClick={handleLastClick}
-        >
-          &gt;&gt;
-        </li>
+        
       </ul>
     </div>
   );
