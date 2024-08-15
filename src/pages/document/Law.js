@@ -4,6 +4,12 @@ import backgroundImage from "./../../assets/16.09.2022-2-1-2.jpg";
 
 export const Law = () => {
   const documentList = [
+    { name: "შინაგანაწესი", filename: "shinaganawesi.pdf" },
+    { name: "წესდება", filename: "wesdeba.pdf" },
+    {
+      name: "სამსახურის ინსტრუქციები",
+      filename: "samsaxuris_instruqciebi.pdf",
+    },
     {
       name: "პედაგოგთა საბჭოს დებლება",
       filename: "pedagogta_sabchos_debuleba.pdf",
@@ -13,12 +19,7 @@ export const Law = () => {
       name: "საგანგებო სიტუაციებისას რეაგირების მართვა",
       filename: "sagangebo_situaciebisas_reagirebis_martva.pdf",
     },
-    { name: "შინაგანაწესი", filename: "shinaganawesi.pdf" },
-    {
-      name: "სამსახურის ინსტრუქციები",
-      filename: "samsaxuris_instruqciebi.pdf",
-    },
-    { name: "წესდება", filename: "wesdeba.pdf" },
+   
     {
       name: "დისციპლინური საბჭოს დებულება",
       filename: "disciplinuri_sabchos_debuleba.pdf",
@@ -40,6 +41,26 @@ export const Law = () => {
       name: "პერსონალურ მონაცემთა დაცვის მექანიზმი",
       filename: "personalur_monacemta_dacvis_meqanizmi.pdf",
     },
+    {
+      name:"ავტორიზაციის საბჭოს გადაწყვეტილება",
+      filename:"avtorizaciis_sabchos_gadawkvetileba_27.12.2019.pdf"
+    },
+    {
+      name:"ვერიფიკაცია-ვალიდობის მექანიზმების  დოკუმენტი",
+      filename:"verifikacia_validurobis_meqanizmebis_dokumenti.pdf"
+    },
+    {
+      name:"კურიკულუმის შემუშავების მეთოდოლოგიის დოკუმენტი",
+      filename:"kurikulumis_shemushavebis_metodologiis_dokumenti.pdf"
+    },
+    {
+      name:"საქმისწარმოების წესი",
+      filename:"saqmiswarmoebis_wesi.pdf"
+    },
+    {
+      name:"სკოლის პერსონალურ მონაცემთა დაცვის პოლიტიკა",
+      filename:"skolis_personalur_monacemta_dacvis_politika.pdf"
+    }
   ];
 
   const backgroundStyle = {

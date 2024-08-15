@@ -41,13 +41,6 @@
   }
   
   .partniors li {
-    width: 200px;
-    height: 75px;
-    margin: 5px;
-    background: #eee;
-    padding: 13px 0;
-  }
-  .partniors li {
     float: left;
     padding: 0px;
     width: 20%;
@@ -70,7 +63,7 @@
   }
   
   .partniors li {
-    width: 224px;
+    width: 200px;
     height: 83px;
     margin: 5px;
     background: #eee;
