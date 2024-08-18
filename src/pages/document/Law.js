@@ -60,6 +60,10 @@ export const Law = () => {
     {
       name:"სკოლის პერსონალურ მონაცემთა დაცვის პოლიტიკა",
       filename:"skolis_personalur_monacemta_dacvis_politika.pdf"
+    },
+    {
+      name:"სტრატეგიული განვითარების, სამოქმედო და სასკოლო-სასწავლო გეგმების შემუშავების, მონიტორინგის და შეფასების მეთოდოლოგია",
+      filename:"strategiuli_ganvitarebis_samoqmedo_da_saskolo_saswavlo_gegmebis_shemushaveba.pdf"
     }
   ];
 

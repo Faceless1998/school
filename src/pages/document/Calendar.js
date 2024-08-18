@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./calendar.css";
 import backgroundImage from "./../../assets/16.09.2022-2-1-2.jpg";
 
@@ -6,7 +6,8 @@ import backgroundImage from "./../../assets/16.09.2022-2-1-2.jpg";
 const getDaysInMonth = (year, month) => new Date(year, month, 0).getDate();
 
 // Helper function to get the day of the week for the 1st of the month
-const getFirstDayOfMonth = (year, month) => new Date(year, month - 1, 1).getDay();
+const getFirstDayOfMonth = (year, month) =>
+  new Date(year, month - 1, 1).getDay();
 
 // Adjusting day index to start from Monday
 const adjustDayIndex = (dayIndex) => (dayIndex === 0 ? 6 : dayIndex - 1);
@@ -20,7 +21,8 @@ const getWeekendDates = (year, month) => {
     const date = new Date(year, month - 1, day);
     const dayOfWeek = date.getDay();
 
-    if (dayOfWeek === 6 || dayOfWeek === 0) { // 6 is Saturday, 0 is Sunday
+    if (dayOfWeek === 6 || dayOfWeek === 0) {
+      // 6 is Saturday, 0 is Sunday
       dates.push({ month, day });
     }
   }
@@ -37,8 +39,18 @@ export const Calendar = () => {
   const startYear = 2024;
   const endYear = 2025;
   const months = [
-    'სექტემბერი', 'ოქტომბერი', 'ნოემბერი', 'დეკემბერი', 'იანვარი', 'თებერვალი',
-    'მარტი', 'აპრილი', 'მაისი', 'ივნისი', 'ივლისი', 'აგვისტო'
+    "სექტემბერი",
+    "ოქტომბერი",
+    "ნოემბერი",
+    "დეკემბერი",
+    "იანვარი",
+    "თებერვალი",
+    "მარტი",
+    "აპრილი",
+    "მაისი",
+    "ივნისი",
+    "ივლისი",
+    "აგვისტო",
   ];
 
   // Define the dates to highlight (example: { month: 9, day: 15 })
@@ -59,7 +71,7 @@ export const Calendar = () => {
     { month: 6, day: 28 },
     { month: 6, day: 29 },
     { month: 6, day: 30 },
-  
+
     // July
     { month: 7, day: 1 },
     { month: 7, day: 2 },
@@ -92,7 +104,7 @@ export const Calendar = () => {
     { month: 7, day: 29 },
     { month: 7, day: 30 },
     { month: 7, day: 31 },
-  
+
     // August
     { month: 8, day: 1 },
     { month: 8, day: 2 },
@@ -125,7 +137,7 @@ export const Calendar = () => {
     { month: 8, day: 29 },
     { month: 8, day: 30 },
     { month: 8, day: 31 },
-  
+
     // September
     { month: 9, day: 1 },
     { month: 9, day: 2 },
@@ -141,24 +153,56 @@ export const Calendar = () => {
     { month: 9, day: 12 },
     { month: 9, day: 13 },
     { month: 9, day: 14 },
+
+    //vacations
+    { month: 10, day: 14 },
+    { month: 12, day: 30 },
+    { month: 12, day: 31 },
+    { month: 1, day: 14 },
+    { month: 1, day: 14 },
+    { month: 1, day: 14 },
+    { month: 1, day: 1 },
+    { month: 1, day: 2 },
+    { month: 1, day: 3 },
+    { month: 1, day: 6 },
+    { month: 1, day: 7 },
+    { month: 1, day: 8 },
+    { month: 1, day: 9 },
+    { month: 1, day: 10 },
+    { month: 1, day: 13 },
+    { month: 1, day: 14 },
+    { month: 3, day: 3 },
+    { month: 3, day: 10 },
+    { month: 3, day: 11 },
+    { month: 3, day: 12 },
+    { month: 3, day: 13 },
+    { month: 4, day: 9 },
+    { month: 4, day: 18 },
+    { month: 4, day: 21 },
+    { month: 5, day: 9 },
+    { month: 5, day: 12 },
+    { month: 5, day: 26 },
+
+
   ];
-  
-  
+
   // Create an array of month objects with their respective days and weeks
   const calendar = months.map((month, index) => {
     const monthIndex = (index + 8) % 12; // Adjust month index for correct year
-    const year = (index + 8) < 12 ? startYear : endYear; // Determine year based on month index
+    const year = index + 8 < 12 ? startYear : endYear; // Determine year based on month index
     const daysInMonth = getDaysInMonth(year, monthIndex + 1);
     const firstDay = adjustDayIndex(getFirstDayOfMonth(year, monthIndex + 1));
-    
+
     // Create an array to represent the days including the empty days at the beginning
-    const days = Array.from({ length: firstDay }).fill(null).concat(Array.from({ length: daysInMonth }, (_, i) => i + 1));
-    
+    const days = Array.from({ length: firstDay })
+      .fill(null)
+      .concat(Array.from({ length: daysInMonth }, (_, i) => i + 1));
+
     // Pad the end of the days array to ensure it fits into 7 rows
     while (days.length % 7 !== 0) {
       days.push(null);
     }
-    
+
     // Get weekend dates for the current month
     const weekendDates = getWeekendDates(year, monthIndex + 1);
 
@@ -175,38 +219,52 @@ export const Calendar = () => {
     <div className="calendar-container" style={backgroundStyle}>
       <div className="background-overlay"></div>
       <div className="calendar">
-        {calendar.map(({ month, year, days, monthIndex: currentMonthIndex, weekendDates }, index) => (
-          <div key={index} className="month">
-            <h2>{month} {year}</h2>
-            <div className="days">
-              {/* Render the week headers */}
-              <div className="week">
-                <div className="day-header">ორშ.</div>
-                <div className="day-header">სამშ.</div>
-                <div className="day-header">ოთხშ.</div>
-                <div className="day-header">ხუთშ.</div>
-                <div className="day-header">პარ.</div>
-                <div className="day-header">შაბ.</div>
-                <div className="day-header">კვ.</div>
-              </div>
-              {/* Render the days */}
-              <div className="days-grid">
-                {days.map((day, dayIndex) => {
-                  const isHighlighted = highlightDates.some(date => date.month === currentMonthIndex && date.day === day);
-                  const isWeekend = weekendDates.some(date => date.day === day);
-                  return (
-                    <div
-                      key={dayIndex}
-                      className={`day ${day ? 'active' : 'empty'} ${isHighlighted ? 'highlight' : ''} ${isWeekend ? 'weekend' : ''}`}
-                    >
-                      {day}
-                    </div>
-                  );
-                })}
+        {calendar.map(
+          (
+            { month, year, days, monthIndex: currentMonthIndex, weekendDates },
+            index
+          ) => (
+            <div key={index} className="month">
+              <h2>
+                {month} {year}
+              </h2>
+              <div className="days">
+                {/* Render the week headers */}
+                <div className="week">
+                  <div className="day-header">ორშ.</div>
+                  <div className="day-header">სამშ.</div>
+                  <div className="day-header">ოთხშ.</div>
+                  <div className="day-header">ხუთშ.</div>
+                  <div className="day-header">პარ.</div>
+                  <div className="day-header">შაბ.</div>
+                  <div className="day-header">კვ.</div>
+                </div>
+                {/* Render the days */}
+                <div className="days-grid">
+                  {days.map((day, dayIndex) => {
+                    const isHighlighted = highlightDates.some(
+                      (date) =>
+                        date.month === currentMonthIndex && date.day === day
+                    );
+                    const isWeekend = weekendDates.some(
+                      (date) => date.day === day
+                    );
+                    return (
+                      <div
+                        key={dayIndex}
+                        className={`day ${day ? "active" : "empty"} ${
+                          isHighlighted ? "highlight" : ""
+                        } ${isWeekend ? "weekend" : ""}`}
+                      >
+                        {day}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
     </div>
   );
