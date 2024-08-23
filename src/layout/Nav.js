@@ -131,6 +131,9 @@ const Nav = () => {
                 <li>
                   <Link to="/research">კვლევები</Link>
                 </li>
+                <li>
+                  <Link to="/club">კლუბები</Link>
+                </li>
               </ul>
             </li>
             <li>
