@@ -64,6 +64,10 @@ export const Law = () => {
     {
       name:"სტრატეგიული განვითარების, სამოქმედო და სასკოლო-სასწავლო გეგმების შემუშავების, მონიტორინგის და შეფასების მეთოდოლოგია",
       filename:"strategiuli_ganvitarebis_samoqmedo_da_saskolo_saswavlo_gegmebis_shemushaveba.pdf"
+    },
+    {
+      name:"მასწავლებლის ეთიკის კოდექსი",
+      filename:"moswavlis_etikis_kodeqsi.pdf"
     }
   ];
 
